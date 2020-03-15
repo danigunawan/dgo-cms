@@ -1,0 +1,73 @@
+<div class="py-4 mb-2">
+  <h3 class="d-inline-block">User Details</h3>
+
+  <div class="float-right">
+    <%= linkTo(usersPath(), {class: "btn btn-info"}) { %>
+      Back to all Users
+    <% } %>
+    <%= linkTo(editUserPath({ user_id: user.ID }), {class: "btn btn-warning", body: "Edit"}) %>
+    <%= linkTo(userPath({ user_id: user.ID }), {class: "btn btn-danger", "data-method": "DELETE", "data-confirm": "Are you sure?", body: "Destroy"}) %>
+  </div>
+</div>
+
+
+
+<ul class="list-group mb-2 ">
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">Email</label>
+    <p class="d-inline-block"><%= user.Email %></p>
+  </li>
+
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">PasswordHash</label>
+    <p class="d-inline-block"><%= user.PasswordHash %></p>
+  </li>
+
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">PasswordHashReset</label>
+    <p class="d-inline-block"><%= user.PasswordHashReset %></p>
+  </li>
+
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">Verified</label>
+    <p class="d-inline-block"><%= user.Verified %></p>
+  </li>
+
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">VerificationHash</label>
+    <p class="d-inline-block"><%= user.VerificationHash %></p>
+  </li>
+
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">Active</label>
+    <p class="d-inline-block"><%= user.Active %></p>
+  </li>
+
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">Name</label>
+    <p class="d-inline-block"><%= user.Name %></p>
+  </li>
+
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">Color</label>
+    <p class="d-inline-block"><%= user.Color %></p>
+  </li>
+
+
+</ul>

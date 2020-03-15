@@ -40,7 +40,13 @@ CREATE TABLE public.users (
     email character varying(255) NOT NULL,
     password_hash character varying(255) NOT NULL,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    password_hash_reset character varying(255) DEFAULT ''::character varying NOT NULL,
+    verified boolean DEFAULT false NOT NULL,
+    verification_hash character varying(255) DEFAULT ''::character varying NOT NULL,
+    active boolean DEFAULT false NOT NULL,
+    name character varying(255) DEFAULT ''::character varying NOT NULL,
+    color character varying(255) DEFAULT ''::character varying NOT NULL
 );
 
 
@@ -59,6 +65,13 @@ ALTER TABLE ONLY public.users
 --
 
 CREATE UNIQUE INDEX schema_migration_version_idx ON public.schema_migration USING btree (version);
+
+
+--
+-- Name: users_email_idx; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE UNIQUE INDEX users_email_idx ON public.users USING btree (email);
 
 
 --
